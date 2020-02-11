@@ -10,11 +10,11 @@
 {{ $categories := .Site.Params.categories }}
 {{ range $categories }}
   <h2 class="usa-accordion__heading">
-    <button class="usa-accordion__button" aria-controls="{{ .name | urlize }}" aria-expanded="true">
+    <button class="usa-accordion__button" aria-controls="{{ .name | base64Encode }}" aria-expanded="true">
       <a class="usa-button" href="/affected/{{ .name | urlize }}">{{ .name }}</a>
     </button>
   </h2>   
-  <div id="{{ .name | urlize }}" class="usa-accordion__content">
+  <div id="{{ .name | base64Encode }}" class="usa-accordion__content">
     <i class="float-right">{{ .description }}</i> 
     {{ $categorySystems := where $systems "category" "=" .name }}
     {{ range $categorySystems }}

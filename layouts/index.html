@@ -1,26 +1,20 @@
-{{ partial "meta" . }}
+{{ partial "meta" . }} 
+{{ $incidents := where .Site.RegularPages "Params.section" "issue" }} 
+{{ $active := where $incidents "Params.resolved" "=" false }} 
+{{ $isNotice := where $active "Params.severity" "=" "notice" }} 
+{{ $isDisrupted := where $active "Params.severity" "=" "disrupted" }} 
+{{ $isDown := where $active "Params.severity" "=" "down" }} 
+{{ partial "header" . }}
 
-{{ $incidents := where .Site.RegularPages "Params.section" "issue" }}
-{{ $active := where $incidents "Params.resolved" "=" false }}
 
-{{ $isNotice := where $active "Params.severity" "=" "notice" }}
-{{ $isDisrupted := where $active "Params.severity" "=" "disrupted" }}
-{{ $isDown := where $active "Params.severity" "=" "down" }}
-
-
-  <body class="status-homepage status-{{ if $isDown }}down{{ else }}{{ if $isDisrupted}}disrupted{{ else }}{{ if $isNotice }}notice{{ else }}ok{{ end }}{{ end }}{{ end }} {{ if not .Site.Params.alwaysKeepBrandColor }}change-header-color{{ end }}">
-    {{ partial "header" . }}
-    
+  <body class="status-homepage">    
     <!-- Main -->
     <main id="main-content">
 
-      <!-- Enable JavaScript banner -->
-      {{ partial "index/noscript" . }}
-      
-      <!-- "All systems operational" (or not) banner 
-      {{ partial "index/summary" . }}-->
-      <div class="grid-container">
-        <button class="usa-button usa-button--secondary summary__date clicky float-right" onclick="location.reload()">
+    <!-- Enable JavaScript banner -->
+    {{ partial "index/noscript" . }}
+    <div class="grid-container">
+        <button class="usa-button usa-button--secondary summary__date clicky float-right" onclick="location.reload()"></button>
       </div>
 
       <!-- Announcement box (title and short summary) -->
@@ -48,22 +42,11 @@
       <!-- All incidents + pagination -->
       <section id="incidents" class="usa-section">
         <div class="grid-container">
-          <div class="contain contain--more" id="incidents">
-          <h1>Incident History</h1>
           {{ partial "index/incidents" . }}
-            <!--
-            {{ if eq .Site.Params.incidentHistoryFormat "yearly" }}
-              {{ partial "index/incidents-yearly" . }}
-            {{ else if eq .Site.Params.incidentHistoryFormat "monthly" }}
-              {{ partial "index/incidents-monthly" . }}
-            {{ else }}
-              {{ partial "index/incidents" . }}
-            {{ end }}
-            -->
-          </div>
         </div>
       </section>
   {{ partial "js" . }}
   {{ partial "footer" . }}
-  </body>
+  </main>
+</body>
 </html>
