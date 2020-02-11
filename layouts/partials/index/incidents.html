@@ -15,10 +15,14 @@
     </div>  
   </div>
 {{ else }}
+
+<h1>Incident History</h1>
+<div class="usa-accordion shadow-5">
   {{ $paginator := .Paginate $incidents .Site.Params.incidentPostsPerPage }}
   {{ range $paginator.Pages }}
     {{ .Render "small" }}
   {{ end }}
+</div>
 
   <!-- If there are more than 2 pages, show pagination -->
   {{ if gt $paginator.TotalPages 1 }}
