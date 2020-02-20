@@ -27,4 +27,4 @@ We are investigating a potential issue that might affect the uptime of one our o
 
 > Thank you for your patience and sorry for any disruption this caused
 
-![forgiveness cat](/img/forgive.gif)
+![forgiveness cat](https://media.giphy.com/media/cjzkCDL3jZTZB6ki1B/giphy.gif)
