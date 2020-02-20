@@ -7,26 +7,22 @@ informational: false
 resolvedWhen: 2020-02-20T19:38:11.672Z
 affected:
   - ''
-severity: down
+severity: disrupted
 ---
-### Investigating 
+**Investigating**
 
 We are investigating a potential issue that might affect the uptime of one our of services. We are sorry for any inconvenience this may cause you. This incident post will be updated once we have more information.
 
-### Remediating
+**Remediating**
 
-**Update 1...**
+*Update:* We see the problem...
 
-* We see the problem...
+*Update:* We know how to fix it now and are doing so...
 
-**Update 2...**
+**Resolved**
 
-* We know how to fix it now and are doing so...
-
-### Resolved
-
-The report on the root cause and what we did to fix and avoid this in the future...
+...report on the root cause and what we did to fix and avoid this in the future...
 
 > Thank you for your patience and sorry for any disruption this caused
->
-> ![forgiveness cat](/img/forgive.gif)
+
+![forgiveness cat](/img/forgive.gif)
