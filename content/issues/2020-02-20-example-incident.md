@@ -6,7 +6,9 @@ resolved: false
 informational: false
 resolvedWhen: 2020-02-20T19:38:11.672Z
 affected:
-  - ''
+  - CMS
+  - Postgresql
+  - Redis
 severity: disrupted
 ---
 **Investigating**
